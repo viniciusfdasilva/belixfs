@@ -1,6 +1,6 @@
 module belix
 
-import database    as json
+import data
 import environment as env
 
 
@@ -9,7 +9,7 @@ const EXIT_SUCCESS = 0
 
 pub fn subsystem_create(){
 
-	mut ok := json.create_environment()
+	mut ok := data.create_environment()
 
 	defer{ mut error_msg = 'Environment create error!' }
 

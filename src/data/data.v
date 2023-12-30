@@ -1,6 +1,7 @@
-module json
+module data
 
 import time
+import json
 
 @[noinit]
 pub struct Environment{
