@@ -20,8 +20,8 @@ jobs:
           sudo apt install build-essential
           sudo apt install make gcc g++ -y
           sudo mkdir -p /opt/v
-          sudo git clone https://github.com/vlang/v.git /opt/v/
-          make -C /opt/v install
+          git clone https://github.com/vlang/v.git /opt/v/
+          sudo make -C /opt/v/ install
           sudo /opt/v/v symlink
           sudo export PATH=$PATH:/opt/v/
           sudo v
