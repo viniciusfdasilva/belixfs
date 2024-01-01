@@ -21,7 +21,6 @@ jobs:
           sudo apt install make gcc g++ -y
           sudo mkdir -p /opt/v
           sudo git clone https://github.com/vlang/v.git /opt/v/
-          cd /opt/v/
-          make install
-          export PATH=$PATH:/opt/v/
-          v
+          make -C /opt/v install
+          /opt/v/v
+          
