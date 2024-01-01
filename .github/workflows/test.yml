@@ -1,0 +1,25 @@
+name: Danix File System
+
+on: 
+  pull_request:
+    branches: [main]
+  push:
+    branches: [dev]
+
+jobs:
+  continuous-integration:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+          
+      - name: Install danix
+        shell: bash
+        run: |
+          sudo apt install build-essential
+          sudo apt install make gcc g++ -y
+          sudo git clone https://github.com/vlang/v.git /opt/
+          cd /opt/v/
+          make install
+          export PATH=$PATH:/opt/v
