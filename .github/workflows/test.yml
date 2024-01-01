@@ -1,4 +1,4 @@
-name: Danix File System
+name: Belix File System
 
 on: 
   pull_request:
@@ -14,12 +14,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
           
-      - name: Install danix
+      - name: Install Vlang
         shell: bash
         run: |
           sudo apt install build-essential
           sudo apt install make gcc g++ -y
-          sudo git clone https://github.com/vlang/v.git /opt/
+          sudo mkdir -p /opt/v
+          sudo git clone https://github.com/vlang/v.git /opt/v/
           cd /opt/v/
           make install
-          export PATH=$PATH:/opt/v
+          export PATH=$PATH:/opt/v/
+          v
