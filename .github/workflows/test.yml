@@ -22,6 +22,5 @@ jobs:
           sudo mkdir -p /opt/v
           git clone https://github.com/vlang/v.git /opt/v/
           sudo make -C /opt/v/ all
-          export PATH=$PATH:/opt/v/
-          sudo v
+          /opt/v/v
           
